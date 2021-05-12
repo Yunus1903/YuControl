@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%d{HH:mm:ss.SSS}] [%t/%level] [%logger/%markerSimpleName]: %msg%n%xEx"/>
+        </Console>
+        <RollingRandomAccessFile name="File" filename="logs/latest.log" filePattern="logs/%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="[%d{dd-MMM-yyyy HH:mm:ss.SSS}] [%t/%level] [%logger/%markerSimpleName]: %msg%n%xEx"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+            <DefaultRolloverStrategy max="99" fileIndex="min"/>
+        </RollingRandomAccessFile>
+    </Appenders>
+    <Loggers>
+        <Root level="all">
+            <AppenderRef ref="Console" level="${sys:logging.console.level:-debug}"/>
+            <AppenderRef ref="File" level="${sys:logging.file.level:-debug}"/>
+        </Root>
+    </Loggers>
+</Configuration>

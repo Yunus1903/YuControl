@@ -1,0 +1,39 @@
+apply plugin: "java"
+
+project.file("run").mkdirs()
+
+group "com.yunus1903"
+version version
+
+sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+    // Log4J
+    compile "org.apache.logging.log4j:log4j-api:$log4j_version"
+    compile "org.apache.logging.log4j:log4j-core:$log4j_version"
+
+    // Gson
+    compile "com.google.code.gson:gson:$gson_version"
+
+    // Guava
+    compile "com.google.guava:guava:$guava_version"
+
+    // JNA
+    compile "net.java.dev.jna:jna:$jna_version"
+    compile "net.java.dev.jna:jna-platform:$jna_version"
+
+    // JNativeHook
+    compile "com.1stleg:jnativehook:$jnativehook_version"
+
+    // JIntellitype
+    compile "com.melloware:jintellitype:$jintellitype_version"
+
+    // Lombok
+    compile "org.projectlombok:lombok:$lombok_version"
+    annotationProcessor "org.projectlombok:lombok:$lombok_version"
+}
