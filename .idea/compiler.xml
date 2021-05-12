@@ -9,7 +9,7 @@
         </processorPath>
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.6">
+     <bytecodeTargetLevel target="1.8">
       <module name="com.yunus1903.YuControl.main" target="1.8" />
       <module name="com.yunus1903.YuControl.test" target="1.8" />
     </bytecodeTargetLevel>
